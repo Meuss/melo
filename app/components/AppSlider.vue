@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-[calc(100vh-64px)] bg-black">
+  <div class="w-full h-[calc(100vh-64px)] bg-black relative slider-container">
     <Swiper
       :modules="[EffectFade, Autoplay]"
       :slides-per-view="1"
@@ -38,6 +38,18 @@ const images = [
 </script>
 
 <style scoped>
+.slider-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  z-index: 10;
+}
+
 .swiper {
   width: 100%;
   height: 100%;

@@ -13,6 +13,13 @@
 @layer base {
   h1,
   h2 {
-    @apply font-serif uppercase text-8xl;
+    @apply font-sans uppercase text-8xl text-center mb-4;
+  }
+  h3 {
+    @apply uppercase text-xs text-center mb-4;
+  }
+
+  section a {
+    @apply border pt-2 pb-1 px-5 uppercase hover:bg-orange hover:text-purple hover:border-purple transition-colors;
   }
 }
