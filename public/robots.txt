@@ -1,2 +1,4 @@
 User-Agent: *
 Disallow:
+
+Sitemap: https://melocoton-club.ch/sitemap.xml

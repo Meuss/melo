@@ -1,7 +1,7 @@
 <template>
   <div
     ref="offcanvasElement"
-    class="bg-black h-screen w-screen fixed text-white uppercase -top-[calc(100vh-64px)] z-10"
+    class="bg-black h-screen w-screen fixed text-white uppercase -top-[100vh] z-40"
     @click="closeOffcanvas"
   >
     <nav
@@ -9,20 +9,48 @@
       class="flex flex-col items-center justify-center h-full gap-4 text-center"
       @click.stop
     >
-      <ul>
-        <li class="mb-4 font-sans text-8xl"><a href="#" @click="closeOffcanvas">Le melo</a></li>
-        <li class="mb-4 font-sans text-8xl"><a href="#" @click="closeOffcanvas">Réservation</a></li>
+      <ul class="">
         <li class="mb-4 font-sans text-8xl">
-          <a href="#" @click="closeOffcanvas">Privatisation</a>
+          <button
+            class="uppercase cursor-pointer hover:text-purple transition-colors"
+            @click="closeOffcanvas('melo')"
+          >
+            Le melo
+          </button>
         </li>
         <li class="mb-4 font-sans text-8xl">
-          <div class="flex justify-center items-center gap-2">
-            <SvgInstagram />
-            <SvgFacebook />
+          <button
+            class="uppercase cursor-pointer hover:text-purple transition-colors"
+            @click="closeOffcanvas('reservation')"
+          >
+            Réservation
+          </button>
+        </li>
+        <li class="mb-12 font-sans text-8xl">
+          <button
+            class="uppercase cursor-pointer hover:text-purple transition-colors"
+            @click="closeOffcanvas('privatisation')"
+          >
+            Privatisation
+          </button>
+        </li>
+        <li class="mb-8 font-sans text-8xl">
+          <div class="flex justify-center items-center gap-3">
+            <a href="https://www.instagram.com/melocoton_club/">
+              <SvgInstagram />
+            </a>
+            <a href="https://www.facebook.com/Melocotonclubbulle/">
+              <SvgFacebook />
+            </a>
           </div>
         </li>
         <li>
-          <a href="#" class="font-serif" @click="closeOffcanvas">Contact</a>
+          <button
+            class="uppercase cursor-pointer font-serif hover:text-purple transition-colors"
+            @click="closeOffcanvas('contact')"
+          >
+            Contact
+          </button>
         </li>
       </ul>
     </nav>
@@ -32,6 +60,10 @@
 <script setup>
 import { ref, watch, onMounted, onUnmounted } from 'vue';
 import { gsap } from 'gsap';
+import { ScrollSmoother } from 'gsap/ScrollSmoother';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+
+gsap.registerPlugin(ScrollToPlugin);
 
 const { isOpen, close } = useOffcanvas();
 const offcanvasElement = ref(null);
@@ -41,10 +73,8 @@ let timeline = null;
 onMounted(() => {
   timeline = gsap.timeline({ paused: true });
 
-  // Get all li elements for staggered animation
   const listItems = offcanvasElement.value.querySelectorAll('li');
 
-  // Set initial state for list items
   gsap.set(listItems, {
     opacity: 0,
     y: 40,
@@ -74,10 +104,45 @@ onMounted(() => {
     }
   };
 
+  // Track scroll position to auto-close offcanvas
+  let initialScrollY = 0;
+  let isTracking = false;
+
+  const handleScroll = () => {
+    if (!isOpen.value) return;
+
+    const currentScrollY = window.scrollY;
+
+    if (!isTracking) {
+      initialScrollY = currentScrollY;
+      isTracking = true;
+      return;
+    }
+
+    const scrollDelta = Math.abs(currentScrollY - initialScrollY);
+
+    if (scrollDelta > 50) {
+      closeOffcanvas();
+      isTracking = false;
+    }
+  };
+
+  // Reset tracking when offcanvas opens
+  watch(isOpen, (newIsOpen) => {
+    if (newIsOpen) {
+      isTracking = false;
+      initialScrollY = window.scrollY;
+    } else {
+      isTracking = false;
+    }
+  });
+
   document.addEventListener('keydown', handleKeyDown);
+  window.addEventListener('scroll', handleScroll, { passive: true });
 
   onUnmounted(() => {
     document.removeEventListener('keydown', handleKeyDown);
+    window.removeEventListener('scroll', handleScroll);
   });
 });
 
@@ -97,7 +162,22 @@ watch(isOpen, (newIsOpen) => {
   }
 });
 
-const closeOffcanvas = () => {
+const closeOffcanvas = (section) => {
+  if (section) {
+    const targetElement = document.querySelector(`[data-section="${section}"]`);
+    if (targetElement) {
+      const smoother = ScrollSmoother.get();
+      if (smoother) {
+        smoother.scrollTo(targetElement, true, 'top 100px');
+      } else {
+        gsap.to(window, {
+          duration: 1.5,
+          scrollTo: { y: targetElement, offsetY: 100 },
+          ease: 'power2.inOut',
+        });
+      }
+    }
+  }
   close();
 };
 </script>

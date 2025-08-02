@@ -1,0 +1,248 @@
+<template>
+  <div class="logo-wrapper w-80 -translate-y-10 opacity-0">
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 283.5 130.6">
+      <!-- This group contains the parts of the main "M" symbol -->
+      <g class="logo-symbol">
+        <!-- Part 1: Central Hexagon Shape -->
+        <path fill="white" d="M59.4,56.9L0,11.1v27.4l59.4,45.9,59.4-45.9V11.1l-59.4,45.9Z" />
+        <!-- Part 2: Outer Chevron Shape -->
+        <path fill="white" d="M0,56.7v27.4l59.4,45.9,59.4-45.9v-27.4l-59.4,45.9L0,56.7Z" />
+        <!-- Part 3: Bottom Left Triangle -->
+        <path fill="white" d="M0,129.7h35.5L0,102.4v27.4Z" />
+        <!-- Part 4: Bottom Right Triangle -->
+        <path fill="white" d="M118.9,129.7v-27.4l-35.5,27.4h35.5Z" />
+      </g>
+      <!-- This group contains all the text paths -->
+      <g class="logo-text">
+        <path
+          fill="white"
+          d="M154.6,37.9v.3h-16.9v-.3l3.7-4.6v-13l-3.6-5.1v-.3l12.9-3.9v5.8h.2c2.9-3.9,6-5.7,9.2-5.7s5.8,2,6.6,5.7h.3c2.9-3.9,6-5.7,9.2-5.7s6.9,2.9,6.9,8.3v13.9l3.7,4.6v.3h-13.2v-17c0-2.8-1.2-3.6-2.6-3.6s-2.7.7-3.9,1.6v14.1l3.7,4.6v.3h-13.2v-17c0-2.8-1.2-3.6-2.6-3.6s-2.6.6-3.9,1.6v14.1l3.7,4.6Z"
+        />
+        <path
+          fill="white"
+          d="M212.7,28.1l.5.3c-2.1,8-6.8,10.5-11.6,10.5-8.4,0-12.8-6.5-12.8-13.7s4.6-14.1,13.1-14.1,11.6,4.5,11.6,12.4h-15.9c.7,6.4,4.1,8.5,7.7,8.5s5.7-1.4,7.4-4ZM197.5,21.4h7.6c-.3-5.1-1.9-8-4.1-8s-3.5,2.2-3.5,7.5v.5Z"
+        />
+        <path
+          fill="white"
+          d="M229.4,33.3l3.7,4.6v.3h-16.9v-.3l3.7-4.6v-14.3l-3.6-3.2v-.3l3.6-3.2v-3l-3.6-5.1v-.3l13.1-3.9v33.3Z"
+        />
+        <path
+          fill="white"
+          d="M249,38.8c-9,0-13.5-6.2-13.5-13.5s6.2-14.2,14.5-14.2,13.5,6.2,13.5,13.5-6.2,14.2-14.5,14.2ZM248.1,13.3c-1.5,0-2.8,1.7-2.8,7.6,0,8.3,2.4,15.8,5.6,15.8s2.8-1.7,2.8-7.6c0-8.3-2.4-15.8-5.6-15.8Z"
+        />
+        <path
+          fill="white"
+          d="M160.4,57.6v11.1h-.6c-3.5-7.2-6-8.8-8-8.8s-4.3,2.4-4.3,7.2,2.5,10.8,7.1,10.8,4.9-1.9,6.5-4.3l.5.2c-1.5,6.5-5.4,10.8-11.6,10.8s-11.4-6-11.4-13,6-14.1,15.8-14.1h6Z"
+        />
+        <path
+          fill="white"
+          d="M178.5,84.7c-9,0-13.5-6.2-13.5-13.5s6.2-14.2,14.5-14.2,13.5,6.2,13.5,13.5-6.2,14.2-14.5,14.2ZM177.6,59.2c-1.5,0-2.8,1.7-2.8,7.6,0,8.3,2.4,15.8,5.6,15.8s2.8-1.7,2.8-7.6c0-8.3-2.4-15.8-5.6-15.8Z"
+        />
+        <path
+          fill="white"
+          d="M194.8,60.7l1.8-3.1h3v-4l9-4.5h.5v8.5h7.6v.3l-1.8,3.1h-5.8v14c0,2.2,1,3.3,2.5,3.3s3.2-1.1,4.6-3.2l.5.3c-1.7,6.8-5.2,9.3-9.5,9.3s-7.7-2.6-7.7-8v-15.7h-4.8v-.3Z"
+        />
+        <path
+          fill="white"
+          d="M232.7,84.7c-9,0-13.5-6.2-13.5-13.5s6.2-14.2,14.5-14.2,13.5,6.2,13.5,13.5-6.2,14.2-14.5,14.2ZM231.8,59.2c-1.5,0-2.8,1.7-2.8,7.6,0,8.3,2.4,15.8,5.6,15.8s2.8-1.7,2.8-7.6c0-8.3-2.4-15.8-5.6-15.8Z"
+        />
+        <path
+          fill="white"
+          d="M265.8,83.8v.3h-15.9v-.3l3.7-4.6v-13l-3.6-5.1v-.3l12.9-3.9v5.8h.2c3-4,6.2-5.7,9.4-5.7s7.1,2.9,7.1,8.3v13.9l3.7,4.6v.3h-15.9v-.3l2.6-4.6v-12.2c0-2.8-1.4-3.6-2.9-3.6s-2.9.6-4.1,1.6v14.1l2.6,4.6Z"
+        />
+        <path
+          fill="white"
+          d="M160.4,103.5v11.1h-.6c-3.5-7.2-6-8.8-8-8.8s-4.3,2.4-4.3,7.2,2.5,10.8,7.1,10.8,4.9-1.9,6.5-4.3l.5.2c-1.5,6.5-5.4,10.8-11.6,10.8s-11.4-6-11.4-13,6-14.1,15.8-14.1h6Z"
+        />
+        <path
+          fill="white"
+          d="M177.3,125.1l3.7,4.6v.3h-16.9v-.3l3.7-4.6v-14.3l-3.6-3.2v-.3l3.6-3.2v-3l-3.6-5.1v-.3l13.1-3.9v33.3Z"
+        />
+        <path
+          fill="white"
+          d="M211.5,125.1l3.7,4.6v.3h-13v-5.1h-.2c-2.9,3.9,6,5.7-9.2,5.7s-6.9-2.9-6.9-8.3v-10.2l-3.6-5.1v-.3l13.1-3.8v17.7c0,2.8,1.2,3.6,2.6,3.6s2.6-.6,3.9-1.6v-10.4l-3.6-5.1v-.3l13.1-3.8v22.2Z"
+        />
+        <path
+          fill="white"
+          d="M216.1,95.9v-.3l13.1-3.9v12l-.2,4.3h.2c2.1-3.5,4.5-5.2,7.7-5.2,5.7,0,10.2,5.2,10.2,13.3s-4.7,14.4-14,14.4-5.5-.6-7.3-1.5l-5.5.9h-.6v-28.9l-3.6-5.1ZM229.2,124.4c1.1,2.8,2.9,4.1,4.4,4.1,2.3,0,3.7-2.6,3.7-8s-2.2-11.3-5.4-11.3-1.9.4-2.7,1.3v13.9Z"
+        />
+      </g>
+    </svg>
+  </div>
+</template>
+
+<script setup>
+import { ref, onMounted, inject } from 'vue';
+import { gsap } from 'gsap';
+import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
+
+gsap.registerPlugin(DrawSVGPlugin);
+
+const timeline = ref(null);
+const startSlider = inject('startSlider');
+
+const playAnimation = () => {
+  if (timeline.value) {
+    timeline.value.kill();
+  }
+
+  const tl = gsap.timeline({ defaults: { ease: 'power2.inOut' } });
+  timeline.value = tl;
+
+  const symbolParts = '.logo-symbol path';
+  const textParts = '.logo-text path';
+
+  // Set the initial state of all elements
+  gsap.set(symbolParts, {
+    x: 80,
+    stroke: 'white',
+    strokeWidth: 2,
+    fill: 'transparent',
+    drawSVG: '0%',
+  });
+
+  gsap.set('.logo-symbol path:nth-child(1)', {
+    drawSVG: '50% 50%',
+  });
+  gsap.set('.logo-symbol path:nth-child(2)', {
+    drawSVG: '79% 79%',
+  });
+  gsap.set('.logo-symbol path:nth-child(3)', {
+    drawSVG: '50% 50%',
+  });
+  gsap.set('.logo-symbol path:nth-child(4)', {
+    drawSVG: '50% 50%',
+  });
+
+  gsap.set(textParts, { autoAlpha: 0, x: -20 });
+
+  gsap.set('#opening-hours', { autoAlpha: 0, y: 10 });
+  gsap.set('.logo-wrapper', { autoAlpha: 1 });
+
+  // Draw the strokes
+  tl.to('.logo-symbol path:nth-child(1)', {
+    duration: 1,
+    drawSVG: '0% 100%',
+  });
+  tl.to(
+    '.logo-symbol path:nth-child(2)',
+    {
+      duration: 1,
+      drawSVG: '30% 130%',
+    },
+    '-=0.7'
+  );
+  tl.to(
+    '.logo-symbol path:nth-child(3)',
+    {
+      duration: 1,
+      drawSVG: '100%',
+    },
+    '-=0.7'
+  );
+  tl.to(
+    '.logo-symbol path:nth-child(4)',
+    {
+      duration: 1,
+      drawSVG: '100%',
+    },
+    '-=1'
+  );
+
+  // Fill in the symbol parts
+  tl.to('.logo-symbol path:nth-child(1)', {
+    fill: 'white',
+    stroke: 'transparent',
+    duration: 0.8,
+  });
+  tl.to(
+    '.logo-symbol path:nth-child(2)',
+    {
+      fill: 'white',
+      stroke: 'transparent',
+      duration: 0.8,
+    },
+    '-=0.6'
+  );
+  tl.to(
+    '.logo-symbol path:nth-child(3)',
+    {
+      fill: 'white',
+      stroke: 'transparent',
+      duration: 0.8,
+    },
+    '-=0.6'
+  );
+  tl.to(
+    '.logo-symbol path:nth-child(4)',
+    {
+      fill: 'white',
+      stroke: 'transparent',
+      duration: 0.8,
+    },
+    '-=0.8'
+  );
+
+  // Move to final position
+  tl.to(symbolParts, {
+    x: 0,
+    duration: 0.8,
+    ease: 'power2.out',
+  });
+
+  // Animate the text parts after the symbol
+  tl.to(
+    textParts,
+    {
+      duration: 0.5,
+      autoAlpha: 1,
+      x: 0,
+      ease: 'power2.out',
+      stagger: 0.02,
+      onComplete: () => {
+        if (startSlider) {
+          startSlider();
+        }
+      },
+    },
+    '-=0.5'
+  );
+
+  // Animate the opening hours, header
+  tl.add('end', '-=0.5');
+  tl.to(
+    '#hamburger',
+    {
+      duration: 0.8,
+      autoAlpha: 1,
+      ease: 'power2.out',
+    },
+    'end'
+  );
+  tl.to(
+    '#home-logo',
+    {
+      duration: 0.8,
+      autoAlpha: 1,
+      ease: 'power2.out',
+    },
+    'end'
+  );
+  tl.to(
+    '#opening-hours',
+    {
+      duration: 0.8,
+      autoAlpha: 1,
+      y: 0,
+      ease: 'power2.out',
+    },
+    'end'
+  );
+};
+
+onMounted(() => {
+  playAnimation();
+});
+</script>
+
+<style scoped></style>
