@@ -1,0 +1,18 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Anza Regular', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+  --font-serif:
+    'PPNeueMachina-InktrapRegular', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+  --color-purple: #d9c2fa;
+  --color-orange: #ff4f14;
+}
+
+@layer base {
+  h1,
+  h2 {
+    @apply font-serif uppercase text-8xl;
+  }
+}
