@@ -129,7 +129,7 @@ const generateFramboises = () => {
       size: Math.random() * 60 + 80, // Random size between 80px and 140px
       rotation: Math.random() * 360, // Random rotation
       opacity: Math.random() * 0.4 + 0.1, // Random opacity between 0.1 and 0.5
-      speed: Math.random() * 0.5 + 0.3, // Random parallax speed
+      speed: Math.random() * 1.2 + 0.2, // Random parallax speed
     });
   }
 
@@ -157,14 +157,14 @@ onMounted(() => {
         const speed = framboises.value[index]?.speed;
 
         gsap.to(framboise, {
-          yPercent: 500 * speed,
-          rotate: `+=${Math.random() * 20 - 10}`,
+          yPercent: 300 * speed,
+          rotate: `+=${Math.random() * 30 - 15}`,
           ease: 'none',
           scrollTrigger: {
             trigger: framboise,
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: true,
+            start: 'top bottom+=200px',
+            end: 'bottom top-=500px',
+            scrub: 2,
           },
         });
 
