@@ -1,7 +1,7 @@
 <template>
   <button
-    aria-label="Menu"
     id="hamburger"
+    aria-label="Menu"
     class="opacity-0 cursor-pointer focus:outline-0"
     @click="toggleOffcanvas"
   >

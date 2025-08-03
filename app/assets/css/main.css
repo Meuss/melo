@@ -12,6 +12,16 @@
 
 @layer base {
   h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    /* This is to avoid the dumb warning in lighthouse*/
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  h1,
   h2 {
     @apply font-sans uppercase text-8xl sm:text-8xl text-center mb-4;
   }
