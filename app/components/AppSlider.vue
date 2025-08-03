@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-[calc(100vh-64px)] bg-black relative slider-container">
+  <div class="w-full h-[calc(100dvh-64px)] bg-black relative slider-container">
     <Swiper
       ref="swiperRef"
       :modules="[EffectFade, Autoplay]"
@@ -17,6 +17,7 @@
     >
       <SwiperSlide v-for="(image, index) in images" :key="index">
         <NuxtImg
+          provider="cloudinary"
           :src="image.src"
           :alt="image.alt"
           :class="
@@ -28,7 +29,9 @@
       </SwiperSlide>
     </Swiper>
 
-    <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center z-20">
+    <div
+      class="absolute top-0 left-0 w-full h-full flex items-center justify-center z-20 scale-50 md:scale-75 lg:scale-100"
+    >
       <LogoAnimation />
     </div>
 
@@ -54,13 +57,13 @@ import 'swiper/css';
 import 'swiper/css/effect-fade';
 
 const images = [
-  { src: '/images/MELO_photo_site_1.jpg', alt: 'MELO photo 1' },
-  { src: '/images/MELO_photo_site_2.jpg', alt: 'MELO photo 2' },
-  { src: '/images/MELO_photo_site_3.jpg', alt: 'MELO photo 3' },
-  { src: '/images/MELO_photo_site_4.jpg', alt: 'MELO photo 4' },
-  { src: '/images/MELO_photo_site_5.jpg', alt: 'MELO photo 5' },
-  { src: '/images/MELO_photo_site_6.jpg', alt: 'MELO photo 6' },
-  { src: '/images/MELO_photo_site_7.jpg', alt: 'MELO photo 7', position: 'top' },
+  { src: '/melo/MELO_photo_site_1.jpg', alt: 'MELO photo 1' },
+  { src: '/melo/MELO_photo_site_2.jpg', alt: 'MELO photo 2' },
+  { src: '/melo/MELO_photo_site_3.jpg', alt: 'MELO photo 3' },
+  { src: '/melo/MELO_photo_site_4.jpg', alt: 'MELO photo 4' },
+  { src: '/melo/MELO_photo_site_5.jpg', alt: 'MELO photo 5' },
+  { src: '/melo/MELO_photo_site_6.jpg', alt: 'MELO photo 6' },
+  { src: '/melo/MELO_photo_site_7.jpg', alt: 'MELO photo 7', position: 'top' },
 ];
 
 const swiperRef = ref();

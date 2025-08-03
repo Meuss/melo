@@ -42,7 +42,12 @@
         <p>#framboisettesnoregrets</p>
       </div>
       <div class="lg:w-1/2 aspect-4/3">
-        <NuxtImg src="/images/main-3.jpg" alt="Le melo" class="w-full h-full object-cover" />
+        <NuxtImg
+          provider="cloudinary"
+          src="/melo/main/main-3.jpg"
+          alt="Le melo"
+          class="w-full h-full object-cover"
+        />
       </div>
     </section>
 
@@ -59,7 +64,12 @@
         </div>
       </div>
       <div class="lg:w-1/2 aspect-4/3">
-        <NuxtImg src="/images/main-8.jpg" alt="Réservation" class="w-full h-full object-cover" />
+        <NuxtImg
+          provider="cloudinary"
+          src="/melo/main/main-8.jpg"
+          alt="Réservation"
+          class="w-full h-full object-cover"
+        />
       </div>
     </section>
 
@@ -82,7 +92,12 @@
         </div>
       </div>
       <div class="lg:w-1/2 aspect-4/3">
-        <NuxtImg src="/images/main-9.jpg" alt="Privatisation" class="w-full h-full object-cover" />
+        <NuxtImg
+          provider="cloudinary"
+          src="/melo/main/main-9.jpg"
+          alt="Privatisation"
+          class="w-full h-full object-cover"
+        />
       </div>
     </section>
   </div>

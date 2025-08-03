@@ -10,7 +10,9 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()],
   },
   image: {
-    // Options
+    cloudinary: {
+      baseURL: 'https://res.cloudinary.com/dljgq8ek2/image/upload/v1754207934/',
+    },
   },
   app: {
     head: {
