@@ -16,16 +16,23 @@
       @slide-change="onSlideChange"
     >
       <SwiperSlide v-for="(image, index) in images" :key="index">
-        <NuxtImg
-          provider="cloudinary"
-          :src="image.src"
-          :alt="image.alt"
-          :class="
-            image.position === 'top'
-              ? 'w-full h-full object-cover slide-image object-top'
-              : 'w-full h-full object-cover slide-image'
-          "
-        />
+        <picture class="w-full h-full">
+          <!-- Mobile crop 1200x1400 -->
+          <source
+            media="(max-width: 767px)"
+            :srcset="`https://res.cloudinary.com/dljgq8ek2/image/upload/f_auto,q_auto:good,c_fill,w_1200,h_1400/v1754207934${image.src}`"
+          />
+          <!-- Desktop -->
+          <img
+            :src="`https://res.cloudinary.com/dljgq8ek2/image/upload/f_auto,q_auto:good/v1754207934${image.src}`"
+            :alt="image.alt"
+            :class="
+              image.position === 'top'
+                ? 'w-full h-full object-cover object-top slide-image'
+                : 'w-full h-full object-cover slide-image'
+            "
+          />
+        </picture>
       </SwiperSlide>
     </Swiper>
 
