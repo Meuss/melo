@@ -15,9 +15,6 @@
   h2 {
     @apply font-sans uppercase text-8xl sm:text-8xl text-center mb-4;
   }
-  h3 {
-    @apply uppercase text-xs text-center mb-4;
-  }
   p {
     @apply mb-4;
   }

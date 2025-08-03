@@ -12,6 +12,7 @@
       <ul class="">
         <li class="mb-4 font-sans text-7xl sm:text-8xl">
           <button
+            aria-label="Menu Le melo"
             class="uppercase cursor-pointer hover:text-purple transition-colors"
             @click="closeOffcanvas('melo')"
           >
@@ -20,6 +21,7 @@
         </li>
         <li class="mb-4 font-sans text-7xl sm:text-8xl">
           <button
+            aria-label="Réservation"
             class="uppercase cursor-pointer hover:text-purple transition-colors"
             @click="closeOffcanvas('reservation')"
           >
@@ -28,6 +30,7 @@
         </li>
         <li class="mb-8 sm:mb-12 font-sans text-7xl sm:text-8xl">
           <button
+            aria-label="Privatisation"
             class="uppercase cursor-pointer hover:text-purple transition-colors"
             @click="closeOffcanvas('privatisation')"
           >
@@ -36,10 +39,16 @@
         </li>
         <li class="mb-8 font-sans">
           <div class="flex justify-center items-center gap-3">
-            <a href="https://www.instagram.com/melocoton_club/">
+            <a
+              href="https://www.instagram.com/melocoton_club/"
+              aria-label="Melocoton Club sur Instagram"
+            >
               <SvgInstagram />
             </a>
-            <a href="https://www.facebook.com/Melocotonclubbulle/">
+            <a
+              href="https://www.facebook.com/Melocotonclubbulle/"
+              aria-label="Melocoton Club sur Facebook"
+            >
               <SvgFacebook />
             </a>
           </div>
