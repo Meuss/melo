@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-[calc(100dvh-64px)] bg-black relative slider-container">
+  <div class="w-full h-[calc(100svh-64px)] bg-black relative slider-container">
     <Swiper
       ref="swiperRef"
       :modules="[EffectFade, Autoplay]"
@@ -111,7 +111,7 @@ const animateCurrentSlide = () => {
     // Reset scale and animate
     gsap.set(activeSlide, { scale: 1 });
     gsap.to(activeSlide, {
-      scale: 1.04,
+      scale: 1.05,
       duration: 5,
       ease: 'linear',
     });

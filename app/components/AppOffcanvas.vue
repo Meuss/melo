@@ -1,16 +1,16 @@
 <template>
   <div
     ref="offcanvasElement"
-    class="bg-black h-screen w-screen fixed text-white uppercase -top-[100vh] z-40"
+    class="bg-black h-[100svh] w-screen fixed text-white uppercase -top-[100svh] z-40"
     @click="closeOffcanvas"
   >
     <nav
       ref="navElement"
-      class="flex flex-col items-center justify-center h-full gap-4 text-center"
+      class="flex flex-col items-center justify-center h-full gap-4 text-center pt-8 sm:pt-0"
       @click.stop
     >
       <ul class="">
-        <li class="mb-4 font-sans text-8xl">
+        <li class="mb-4 font-sans text-7xl sm:text-8xl">
           <button
             class="uppercase cursor-pointer hover:text-purple transition-colors"
             @click="closeOffcanvas('melo')"
@@ -18,7 +18,7 @@
             Le melo
           </button>
         </li>
-        <li class="mb-4 font-sans text-8xl">
+        <li class="mb-4 font-sans text-7xl sm:text-8xl">
           <button
             class="uppercase cursor-pointer hover:text-purple transition-colors"
             @click="closeOffcanvas('reservation')"
@@ -26,7 +26,7 @@
             Réservation
           </button>
         </li>
-        <li class="mb-12 font-sans text-8xl">
+        <li class="mb-8 sm:mb-12 font-sans text-7xl sm:text-8xl">
           <button
             class="uppercase cursor-pointer hover:text-purple transition-colors"
             @click="closeOffcanvas('privatisation')"
@@ -34,7 +34,7 @@
             Privatisation
           </button>
         </li>
-        <li class="mb-8 font-sans text-8xl">
+        <li class="mb-8 font-sans">
           <div class="flex justify-center items-center gap-3">
             <a href="https://www.instagram.com/melocoton_club/">
               <SvgInstagram />

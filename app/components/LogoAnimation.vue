@@ -187,7 +187,7 @@ const playAnimation = () => {
   tl.to(symbolParts, {
     x: 0,
     duration: 0.8,
-    ease: 'power2.out',
+    ease: 'power4.inOut',
   });
 
   // Animate the text parts after the symbol
@@ -205,7 +205,7 @@ const playAnimation = () => {
         }
       },
     },
-    '-=0.5'
+    '-=0.4'
   );
 
   // Animate the opening hours, header

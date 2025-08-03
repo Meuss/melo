@@ -16,7 +16,10 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      meta: [{ name: 'apple-mobile-web-app-title', content: 'Melo' }],
+      meta: [
+        { name: 'apple-mobile-web-app-title', content: 'Mélo' },
+        { name: 'theme-color', content: '#000000' },
+      ],
       htmlAttrs: {
         lang: 'fr',
       },

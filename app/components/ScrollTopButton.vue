@@ -1,7 +1,7 @@
 <template>
   <button
     ref="scrollToTopButton"
-    class="fixed bottom-6 right-6 z-40 w-12 h-12 bg-black bg-opacity-90 hover:bg-opacity-100 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 opacity-0 pointer-events-none cursor-pointer"
+    class="fixed bottom-6 right-6 z-40 w-12 h-12 bg-black bg-opacity-90 hover:bg-opacity-100 rounded-full outline outline-white/10 flex items-center justify-center transition-all duration-300 opacity-0 pointer-events-none cursor-pointer"
     style="will-change: transform, opacity"
     @click="scrollToTop"
   >
