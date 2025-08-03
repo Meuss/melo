@@ -168,7 +168,9 @@ const closeOffcanvas = (section) => {
     if (targetElement) {
       const smoother = ScrollSmoother.get();
       if (smoother) {
-        smoother.scrollTo(targetElement, true, 'top 100px');
+        setTimeout(() => {
+          smoother.scrollTo(targetElement, true, 'top 100px');
+        }, 600);
       } else {
         gsap.to(window, {
           duration: 1.5,

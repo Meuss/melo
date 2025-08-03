@@ -27,9 +27,9 @@
   </div>
 
   <!-- Main content -->
-  <div class="container mx-auto flex flex-col gap-32 py-16 px-4 relative z-10">
-    <section data-section="melo" class="flex flex-col lg:flex-row gap-12">
-      <div class="lg:w-1/2 p-8">
+  <div class="container mx-auto flex flex-col gap-24 lg:gap-32 py-16 px-4 relative z-10">
+    <section data-section="melo" class="flex flex-col lg:flex-row gap-8 lg:gap-12">
+      <div class="lg:w-1/2 p-2 lg:p-8">
         <h1>Le melo</h1>
         <p>
           Sans conteste, le meilleur petit club de la région.<br />
@@ -52,7 +52,7 @@
     </section>
 
     <section data-section="reservation" class="flex flex-col lg:flex-row-reverse gap-12">
-      <div class="lg:w-1/2 p-8">
+      <div class="lg:w-1/2 p-2 lg:p-8">
         <h1>Réservation</h1>
         <p>
           Des tables hautes avec des tabourets confortables sont à disposition dans le club. Réserve
@@ -74,7 +74,7 @@
     </section>
 
     <section data-section="privatisation" class="flex flex-col lg:flex-row gap-12">
-      <div class="lg:w-1/2 p-8">
+      <div class="lg:w-1/2 p-2 lg:p-8">
         <h1>Privatisation</h1>
         <p>
           En dehors de ses heures d'ouverture, le MELO peut être privatisé pour tout type
@@ -86,7 +86,7 @@
           boisson/nourriture clé en main ou sur mesure. De 20 à 80 personnes, notre salle est idéale
           pour un événement réussi dans un cadre original et exclusif.
         </p>
-        <div class="flex justify-center gap-4 mt-10">
+        <div class="flex flex-col items-center justify-center sm:flex-row gap-4 mt-10">
           <a href="#">Réserver</a>
           <a href="#">Plus d'infos</a>
         </div>
@@ -121,12 +121,17 @@ const generateFramboises = () => {
   const framboisesArray = [];
 
   for (let i = 0; i < count; i++) {
+    const isMobile = window.innerWidth < 768;
+    const size = isMobile
+      ? Math.random() * 40 + 40 // Mobile: 40px to 80px
+      : Math.random() * 60 + 80; // Desktop: 80px to 140px
+
     framboisesArray.push({
       id: i,
       svg: Math.floor(Math.random() * 4) + 1, // Random between 1 and 4
       x: Math.random() * 90, // Random X position (0-90%)
       y: Math.random() * 200 + 10, // Random Y position with extra height for scrolling
-      size: Math.random() * 60 + 80, // Random size between 80px and 140px
+      size: size,
       rotation: Math.random() * 360, // Random rotation
       opacity: Math.random() * 0.4 + 0.1, // Random opacity between 0.1 and 0.5
       speed: Math.random() * 1.2 + 0.2, // Random parallax speed
@@ -144,7 +149,7 @@ onMounted(() => {
     smoother = ScrollSmoother.create({
       wrapper: '#smooth-wrapper',
       content: '#smooth-content',
-      smooth: 1.5,
+      smooth: 2,
       effects: true,
       smoothTouch: 0.1,
     });

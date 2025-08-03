@@ -13,7 +13,7 @@
 @layer base {
   h1,
   h2 {
-    @apply font-sans uppercase text-8xl text-center mb-4;
+    @apply font-sans uppercase text-8xl sm:text-8xl text-center mb-4;
   }
   h3 {
     @apply uppercase text-xs text-center mb-4;
