@@ -9,6 +9,7 @@
         <AppFooter />
       </div>
     </div>
+    <ScrollTopButton />
   </div>
 </template>
 
