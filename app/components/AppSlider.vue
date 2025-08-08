@@ -39,7 +39,7 @@
     <div
       class="absolute top-0 left-0 w-full h-full flex items-center justify-center z-20 scale-50 md:scale-75 lg:scale-100"
     >
-      <LogoAnimation />
+      <LogoAnimation v-if="showLogo" />
     </div>
 
     <p
@@ -59,7 +59,7 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 import type { Swiper as SwiperType } from 'swiper';
 import { EffectFade, Autoplay } from 'swiper/modules';
 import { gsap } from 'gsap';
-import { nextTick, ref, provide } from 'vue';
+import { nextTick, ref } from 'vue';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 
@@ -75,8 +75,8 @@ const images = [
 
 const swiperRef = ref();
 const swiperInstance = ref();
-const isSliderActive = ref(false);
 const overlayOpacity = ref(1);
+const showLogo = ref(false);
 
 const autoplayConfig = ref({
   delay: 4000,
@@ -85,32 +85,22 @@ const autoplayConfig = ref({
 
 const onSwiperInit = (swiper: SwiperType) => {
   swiperInstance.value = swiper;
-  // Stop autoplay initially - wait for logo animation to finish
-  swiper.autoplay.stop();
-};
+  // Start autoplay right away
+  swiper.autoplay.start();
+  animateCurrentSlide();
 
-const startSlider = () => {
-  isSliderActive.value = true;
-
-  if (swiperInstance.value) {
-    // Reset to first slide and restart autoplay properly
-    swiperInstance.value.slideTo(0, 0);
-    swiperInstance.value.autoplay.stop();
-    swiperInstance.value.autoplay.start();
-    animateCurrentSlide();
-  } else {
-    console.warn('Swiper instance not found');
-  }
-
+  // Fade overlay so images are visible
   gsap.to(overlayOpacity, {
     value: 0.2,
     duration: 1,
     ease: 'power2.inOut',
   });
-};
 
-// Provide the startSlider function to child components
-provide('startSlider', startSlider);
+  // Start logo animation after 1s by mounting the component
+  setTimeout(() => {
+    showLogo.value = true;
+  }, 1000);
+};
 
 const animateCurrentSlide = () => {
   const activeSlide = document.querySelector('.swiper-slide-active .slide-image') as HTMLElement;
