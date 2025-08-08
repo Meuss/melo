@@ -15,12 +15,10 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Melocoton club - Bulle',
-  ogTitle: 'Melocoton club - Bulle',
-  description:
-    'Sans conteste, le meilleur petit club de la région. Jeudi, vendredi et samedi de 23h00 à 04h00. +18 ans.',
-  ogDescription:
-    'Sans conteste, le meilleur petit club de la région. Jeudi, vendredi et samedi de 23h00 à 04h00. +18 ans.',
+  title: 'MELOCOTON CLUB à Bulle',
+  ogTitle: 'MELOCOTON CLUB à Bulle',
+  description: 'Votre club préféré tous les week-end de 23h à 4h, +18ans',
+  ogDescription: 'Votre club préféré tous les week-end de 23h à 4h, +18ans',
   ogImage: 'https://melocoton-club.ch/og-image.jpg',
 });
 </script>
