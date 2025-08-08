@@ -1,16 +1,13 @@
 <template>
   <div class="logo-wrapper w-80 -translate-y-10 opacity-0">
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 283.5 130.6">
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 284 131">
       <!-- This group contains the parts of the main "M" symbol -->
       <g class="logo-symbol">
-        <!-- Part 1: Central Hexagon Shape -->
-        <path fill="white" d="M59.4,56.9L0,11.1v27.4l59.4,45.9,59.4-45.9V11.1l-59.4,45.9Z" />
-        <!-- Part 2: Outer Chevron Shape -->
-        <path fill="white" d="M0,56.7v27.4l59.4,45.9,59.4-45.9v-27.4l-59.4,45.9L0,56.7Z" />
-        <!-- Part 3: Bottom Left Triangle -->
-        <path fill="white" d="M0,129.7h35.5L0,102.4v27.4Z" />
-        <!-- Part 4: Bottom Right Triangle -->
-        <path fill="white" d="M118.9,129.7v-27.4l-35.5,27.4h35.5Z" />
+        <!-- Shapes -->
+        <path d="M59.5 57L0 11.5V38.5L59.5 85L119 38.5V11.5Z" fill="white" />
+        <path d="M59.5 102.5L0 57V84L59.5 130.5L119 84V57Z" fill="white" />
+        <path d="M0 102.689L35.5626 130.081H0V102.689Z" fill="white" />
+        <path d="M119.21 102.312L83.6472 129.897L119.21 130.398V102.312Z" fill="white" />
       </g>
       <!-- This group contains all the text paths -->
       <g class="logo-text">
@@ -72,14 +69,13 @@
 </template>
 
 <script setup>
-import { ref, onMounted, inject } from 'vue';
+import { ref, onMounted } from 'vue';
 import { gsap } from 'gsap';
 import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
 
 gsap.registerPlugin(DrawSVGPlugin);
 
 const timeline = ref(null);
-const startSlider = inject('startSlider');
 
 const playAnimation = () => {
   if (timeline.value) {
@@ -102,16 +98,16 @@ const playAnimation = () => {
   });
 
   gsap.set('.logo-symbol path:nth-child(1)', {
-    drawSVG: '50% 50%',
+    drawSVG: '0% 0%',
   });
   gsap.set('.logo-symbol path:nth-child(2)', {
-    drawSVG: '79% 79%',
+    drawSVG: '0% 0%',
   });
   gsap.set('.logo-symbol path:nth-child(3)', {
-    drawSVG: '50% 50%',
+    drawSVG: '0% 0%',
   });
   gsap.set('.logo-symbol path:nth-child(4)', {
-    drawSVG: '50% 50%',
+    drawSVG: '0% 0%',
   });
 
   gsap.set(textParts, { autoAlpha: 0, x: -20 });
@@ -122,13 +118,13 @@ const playAnimation = () => {
   // Draw the strokes
   tl.to('.logo-symbol path:nth-child(1)', {
     duration: 1,
-    drawSVG: '0% 100%',
+    drawSVG: '100%',
   });
   tl.to(
     '.logo-symbol path:nth-child(2)',
     {
       duration: 1,
-      drawSVG: '30% 130%',
+      drawSVG: '100%',
     },
     '-=0.7'
   );
@@ -199,11 +195,6 @@ const playAnimation = () => {
       x: 0,
       ease: 'power2.out',
       stagger: 0.02,
-      onComplete: () => {
-        if (startSlider) {
-          startSlider();
-        }
-      },
     },
     '-=0.4'
   );
