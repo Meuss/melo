@@ -9,6 +9,7 @@ Built with Nuxt v4: [Nuxt documentation](https://nuxt.com/docs/getting-started/i
 Start the development server on `http://localhost:3000`:
 
 ```bash
+nvm use
 npm install
 npm run dev
 ```
