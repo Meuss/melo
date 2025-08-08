@@ -60,7 +60,11 @@
         </p>
         <p>→ Offre pour 4-5 personnes : une table, une bouteille à choix, 5 shots : 120.–</p>
         <div class="flex justify-center gap-4 mt-10">
-          <a href="#">Réserver</a>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLScRVVV6GEM6zlvMMS_a4E0TFNssd4IsfBl_S2tbZcd8WPbj4w/viewform?usp=header"
+            target="_blank"
+            >Réserver</a
+          >
         </div>
       </div>
       <div class="lg:w-1/2 aspect-4/3">
@@ -87,7 +91,11 @@
           pour un événement réussi dans un cadre original et exclusif.
         </p>
         <div class="flex flex-col items-center justify-center sm:flex-row gap-4 mt-10">
-          <a href="#">Réserver</a>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLScRVVV6GEM6zlvMMS_a4E0TFNssd4IsfBl_S2tbZcd8WPbj4w/viewform?usp=header"
+            target="_blank"
+            >Réserver</a
+          >
           <a href="#">Plus d'infos</a>
         </div>
       </div>
