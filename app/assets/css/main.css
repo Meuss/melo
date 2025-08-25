@@ -11,6 +11,10 @@
 }
 
 @layer base {
+  html,
+  :host {
+    line-height: 1.3;
+  }
   h1,
   h2,
   h3,
@@ -29,6 +33,6 @@
     @apply mb-4;
   }
   section a {
-    @apply border pt-2 pb-1 px-5 uppercase hover:bg-orange hover:text-purple hover:border-purple transition-colors;
+    @apply border pt-2 pb-1 px-5 uppercase hover:bg-purple hover:text-orange hover:border-orange transition-colors;
   }
 }

@@ -96,7 +96,7 @@
             target="_blank"
             >Réserver</a
           >
-          <a href="#">Plus d'infos</a>
+          <a href="/MELO_privatisation.pdf" target="_blank">Plus d'infos</a>
         </div>
       </div>
       <div class="lg:w-1/2 aspect-4/3">
@@ -141,7 +141,7 @@ const generateFramboises = () => {
       y: Math.random() * 200 + 10, // Random Y position with extra height for scrolling
       size: size,
       rotation: Math.random() * 360, // Random rotation
-      opacity: Math.random() * 0.4 + 0.1, // Random opacity between 0.1 and 0.5
+      opacity: Math.random() * 0.2 + 0.1, // Random opacity between 0.1 and 0.3
       speed: Math.random() * 1.2 + 0.2, // Random parallax speed
     });
   }
@@ -157,9 +157,9 @@ onMounted(() => {
     smoother = ScrollSmoother.create({
       wrapper: '#smooth-wrapper',
       content: '#smooth-content',
-      smooth: 2,
+      smooth: 1.2,
       effects: true,
-      smoothTouch: 0.1,
+      smoothTouch: 0.01,
     });
 
     // Create parallax effects for framboises
