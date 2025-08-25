@@ -184,7 +184,6 @@ onMounted(() => {
         // Add subtle floating animation
         gsap.to(framboise, {
           y: '+=20',
-          rotation: `+=${Math.random() * 20 - 10}`,
           duration: 3 + Math.random() * 4,
           repeat: -1,
           yoyo: true,
