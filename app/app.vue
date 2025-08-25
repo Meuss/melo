@@ -26,9 +26,16 @@ useSeoMeta({
 <style scoped>
 #smooth-wrapper {
   overflow: hidden;
+  /* Mobile scroll optimization */
+  -webkit-overflow-scrolling: touch;
+  /* Prevent mobile bounce */
+  overscroll-behavior: none;
 }
 
 #smooth-content {
   overflow: visible;
+  /* GPU acceleration for better performance */
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 </style>

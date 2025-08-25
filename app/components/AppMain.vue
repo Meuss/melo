@@ -125,11 +125,22 @@ let smoother = null;
 
 // Generate random framboises
 const generateFramboises = () => {
-  const count = Math.floor(Math.random() * 8) + 40; // Random between 40 and 48
+  const isMobile = window.innerWidth < 768;
+
+  // Reduce count on mobile for better performance
+  let maxCount, minCount;
+  if (isMobile) {
+    maxCount = 44;
+    minCount = 36;
+  } else {
+    maxCount = 48;
+    minCount = 40;
+  }
+
+  const count = Math.floor(Math.random() * (maxCount - minCount)) + minCount;
   const framboisesArray = [];
 
   for (let i = 0; i < count; i++) {
-    const isMobile = window.innerWidth < 768;
     const size = isMobile
       ? Math.random() * 40 + 40 // Mobile: 40px to 80px
       : Math.random() * 60 + 80; // Desktop: 80px to 140px
@@ -153,35 +164,41 @@ onMounted(() => {
   generateFramboises();
 
   nextTick(() => {
-    // Initialize ScrollSmoother
-    smoother = ScrollSmoother.create({
-      wrapper: '#smooth-wrapper',
-      content: '#smooth-content',
-      smooth: 1.2,
-      effects: true,
-      smoothTouch: 0.01,
-    });
+    // Detect if device is mobile
+    const isMobile = window.innerWidth < 768;
 
-    // Create parallax effects for framboises
+    // Initialize ScrollSmoother with mobile-optimized settings
+    if (!isMobile) {
+      smoother = ScrollSmoother.create({
+        wrapper: '#smooth-wrapper',
+        content: '#smooth-content',
+        smooth: 1.2,
+        smoothTouch: 0.1,
+        ignoreMobileResize: true, // Prevent issues with mobile viewport changes
+      });
+    }
+
+    // Create parallax effects for framboises (optimized for mobile)
     if (framboisesContainer.value) {
       const framboisesElements = framboisesContainer.value.querySelectorAll('.framboise');
 
       framboisesElements.forEach((framboise, index) => {
         const speed = framboises.value[index]?.speed;
 
+        // Full animation for desktop
         gsap.to(framboise, {
-          yPercent: 300 * speed,
+          yPercent: 400 * speed,
           rotate: `+=${Math.random() * 30 - 15}`,
           ease: 'none',
           scrollTrigger: {
             trigger: framboise,
             start: 'top bottom+=200px',
             end: 'bottom top-=500px',
-            scrub: 2,
+            scrub: 3,
           },
         });
 
-        // Add subtle floating animation
+        // Floating animation for all devices
         gsap.to(framboise, {
           y: '+=20',
           duration: 3 + Math.random() * 4,
@@ -208,9 +225,20 @@ onUnmounted(() => {
 .framboise {
   will-change: transform;
   transition: opacity 0.3s ease;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  pointer-events: none;
 }
 
 [data-section] {
   will-change: transform, opacity;
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 768px) {
+  .framboise {
+    /* Reduce complexity on mobile */
+    transform: translate3d(0, 0, 0);
+  }
 }
 </style>

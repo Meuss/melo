@@ -120,20 +120,23 @@ onMounted(() => {
   const handleScroll = () => {
     if (!isOpen.value) return;
 
-    const currentScrollY = window.scrollY;
+    // Use requestAnimationFrame for better performance
+    requestAnimationFrame(() => {
+      const currentScrollY = window.scrollY;
 
-    if (!isTracking) {
-      initialScrollY = currentScrollY;
-      isTracking = true;
-      return;
-    }
+      if (!isTracking) {
+        initialScrollY = currentScrollY;
+        isTracking = true;
+        return;
+      }
 
-    const scrollDelta = Math.abs(currentScrollY - initialScrollY);
+      const scrollDelta = Math.abs(currentScrollY - initialScrollY);
 
-    if (scrollDelta > 50) {
-      closeOffcanvas();
-      isTracking = false;
-    }
+      if (scrollDelta > 50) {
+        closeOffcanvas();
+        isTracking = false;
+      }
+    });
   };
 
   // Reset tracking when offcanvas opens
