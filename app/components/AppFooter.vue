@@ -17,8 +17,8 @@
       </div>
       <div class="flex-1">
         <p class="uppercase text-xs text-center mb-4">Contact</p>
-        <a href="mailto:info@melocotonclub.ch" class="hover:text-purple transition-colors"
-          >info@melocotonclub.ch</a
+        <a href="mailto:info@melocoton-club.ch" class="hover:text-purple transition-colors"
+          >info@melocoton-club.ch</a
         >
         <div class="flex justify-center items-center gap-2 mt-3">
           <a
