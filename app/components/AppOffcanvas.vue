@@ -13,7 +13,7 @@
         <li class="mb-4 font-sans text-7xl sm:text-8xl">
           <button
             aria-label="Menu Le melo"
-            class="uppercase cursor-pointer hover:text-orange transition-colors"
+            class="uppercase cursor-pointer hover:text-purple transition-colors"
             @click="closeOffcanvas('melo')"
           >
             Le melo
@@ -22,7 +22,7 @@
         <li class="mb-4 font-sans text-7xl sm:text-8xl">
           <button
             aria-label="Réservation"
-            class="uppercase cursor-pointer hover:text-orange transition-colors"
+            class="uppercase cursor-pointer hover:text-purple transition-colors"
             @click="closeOffcanvas('reservation')"
           >
             Réservation
@@ -31,7 +31,7 @@
         <li class="mb-8 sm:mb-12 font-sans text-7xl sm:text-8xl">
           <button
             aria-label="Privatisation"
-            class="uppercase cursor-pointer hover:text-orange transition-colors"
+            class="uppercase cursor-pointer hover:text-purple transition-colors"
             @click="closeOffcanvas('privatisation')"
           >
             Privatisation
@@ -55,7 +55,7 @@
         </li>
         <li>
           <button
-            class="uppercase cursor-pointer font-serif hover:text-orange transition-colors"
+            class="uppercase cursor-pointer font-serif hover:text-purple transition-colors"
             @click="closeOffcanvas('contact')"
           >
             Contact
