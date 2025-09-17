@@ -152,7 +152,7 @@ const generateFramboises = () => {
       y: Math.random() * 200 + 10, // Random Y position with extra height for scrolling
       size: size,
       rotation: Math.random() * 360, // Random rotation
-      opacity: Math.random() * 0.15 + 0.05, // Random opacity between 0.05 and 0.2
+      opacity: Math.random() * 0.4 + 0.4, // Random opacity between 0.4 and 0.8
       speed: Math.random() * 1.2 + 0.2, // Random parallax speed
     });
   }
